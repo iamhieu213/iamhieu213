@@ -1,4 +1,5 @@
-## Hi there 👋
+## ![Typing SVG](https://readme-typing-svg.demolab.com?lines=Hi%2C+I'm+Hieu+from+HUST%2C+HANOI!;I+love+coding+fullstack;Welcome+to+my+GitHub+profile!&center=true&size=20&color=00ff90)
+
 
 <!--
 **iamhieu213/iamhieu213** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
