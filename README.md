@@ -9,7 +9,7 @@
 - 💻 I’m passionate about **Full Stack Web Development**
 - 🌱 Currently exploring **PERN Stack** and **MERN Stack**
 - 📚 I love learning new tech and solving real-world problems
-- 🗣 I'm learning **Japanese ** and improving **English**
+- 🗣 I'm learning **Japanese** and improving **English**
 - 🎯 My goal: Become a **Senior Fullstack Developer** and future **CSO**
 
 ---
