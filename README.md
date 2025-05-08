@@ -9,7 +9,7 @@
 - 💻 I’m passionate about **Full Stack Web Development**
 - 🌱 Currently exploring **PERN Stack** & **Azure OpenAI**
 - 📚 I love learning new tech and solving real-world problems
-- 🗣 I'm learning **Japanese (JLPT N2)** and improving **English**
+- 🗣 I'm learning **Japanese ** and improving **English**
 - 🎯 My goal: Become a **Senior Fullstack Developer** and future **CSO**
 
 ---
