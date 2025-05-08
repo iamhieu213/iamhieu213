@@ -1,5 +1,5 @@
-## 👋 Hello World! 
-![Typing SVG](https://readme-typing-svg.demolab.com?lines=Hi%2C+I'm+Hieu+from+HUST%2C+HANOI!;I+love+coding+fullstack;Welcome+to+my+GitHub+profile!&center=true&size=20&color=00ff90)
+## 👋 ![Typing SVG](https://readme-typing-svg.demolab.com?lines=Hi%2C+I'm+Hieu+from+HUST%2C+HANOI!;I+love+coding+fullstack;Welcome+to+my+GitHub+profile!&center=true&size=20&color=00ff90)
+
 
 <img align="right" alt="Coding" width="300" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
 
