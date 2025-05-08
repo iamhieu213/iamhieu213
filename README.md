@@ -1,17 +1,62 @@
-## ![Typing SVG](https://readme-typing-svg.demolab.com?lines=Hi%2C+I'm+Hieu+from+HUST%2C+HANOI!;I+love+coding+fullstack;Welcome+to+my+GitHub+profile!&center=true&size=20&color=00ff90)
+## 👋 Hello World! 
+![Typing SVG](https://readme-typing-svg.demolab.com?lines=Hi%2C+I'm+Hieu+from+HUST%2C+HANOI!;I+love+coding+fullstack;Welcome+to+my+GitHub+profile!&center=true&size=20&color=00ff90)
 
+<img align="right" alt="Coding" width="300" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
 
-<!--
-**iamhieu213/iamhieu213** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### 🙋‍♂️ About Me
 
-Here are some ideas to get you started:
+- 🎓 I'm currently studying at **Hanoi University of Science and Technology** – SoICT, Viet Nam  
+- 💻 I’m passionate about **Full Stack Web Development**
+- 🌱 Currently exploring **PERN Stack** & **Azure OpenAI**
+- 📚 I love learning new tech and solving real-world problems
+- 🗣 I'm learning **Japanese (JLPT N2)** and improving **English**
+- 🎯 My goal: Become a **Senior Fullstack Developer** and future **CSO**
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+### 🔧 Tech Stack
+
+#### 👨‍💻 Languages & Frameworks
+
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/-Express.js-000000?style=flat&logo=express&logoColor=white)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![EJS](https://img.shields.io/badge/-EJS-777BB4?style=flat)
+
+#### 🗃️ Databases
+
+![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+
+#### 🧰 Tools & Others
+
+![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)
+![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?style=flat&logo=visual-studio-code&logoColor=white)
+![Postman](https://img.shields.io/badge/-Postman-FF6C37?style=flat&logo=postman&logoColor=white)
+![Notion](https://img.shields.io/badge/-Notion-000000?style=flat&logo=notion&logoColor=white)
+![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat&logo=figma&logoColor=white)
+
+---
+
+### 📈 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=iamhieu213&show_icons=true&theme=radical" alt="Hieu's GitHub stats" width="400"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=iamhieu213&theme=radical" width="400"/>
+</p>
+
+---
+
+### 📫 Contact Me
+
+- 📧 Gmail: [iamhieu213@gmail.com](mailto:nguyenvanhieu21.3.2004@gmail.com)
+- 🌐 Facebook: [facebook.com/iamhieu213](https://www.facebook.com/hieu.nguyenvan2132004)
+- 📸 Instagram: [instagram.com/iamhieu.213](https://www.instagram.com/ng.vhieu_213/)
+
+---
+
+> _“Stay hungry, stay foolish.” – Steve Jobs_
