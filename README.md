@@ -53,24 +53,20 @@
 
 ### 📫 Contact Me
 
-<div style="text-align: center;">
-  <h3>📬 Contact Me</h3>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+<p align="center">
+  <a href="[mailto:iamhieu213@gmail.com"](https://www.facebook.com/hieu.nguyenvan2132004) target="_blank">
+    <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" />
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://facebook.com/iamhieu213" target="_blank">
+    <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook" />
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://instagram.com/iamhieu.213" target="_blank">
+    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" />
+  </a>
+</p>
 
-    <a href="mailto:iamhieu213@gmail.com" target="_blank">
-      <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" width="40">
-    </a>
-
-    <a href="https://facebook.com/iamhieu213" target="_blank">
-      <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook" width="40">
-    </a>
-
-    <a href="https://instagram.com/iamhieu.213" target="_blank">
-      <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" width="40">
-    </a>
-
-  </div>
-</div>
 
 
 ---
