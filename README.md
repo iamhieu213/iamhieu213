@@ -53,9 +53,16 @@
 
 ### 📫 Contact Me
 
-- 📧 Gmail: [iamhieu213@gmail.com](mailto:nguyenvanhieu21.3.2004@gmail.com)
-- 🌐 Facebook: [facebook.com/iamhieu213](https://www.facebook.com/hieu.nguyenvan2132004)
-- 📸 Instagram: [instagram.com/iamhieu.213](https://www.instagram.com/ng.vhieu_213/)
+<h3>📬 Contact Me</h3>
+<a href="iamhieu213@gmail.com" target="_blank">
+  <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" width="30" style="margin-right:10px;">
+</a>
+<a href="[https://facebook.com/iamhieu213](https://www.facebook.com/hieu.nguyenvan2132004)" target="_blank">
+  <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook" width="30" style="margin-right:10px;">
+</a>
+<a href="https://instagram.com/iamhieu.213" target="_blank">
+  <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" width="30">
+</a>
 
 ---
 
