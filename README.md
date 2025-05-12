@@ -53,20 +53,29 @@
 
 ### 📫 Contact Me
 
-<p align="center">
-  <a href="[mailto:iamhieu213@gmail.com"](https://www.facebook.com/hieu.nguyenvan2132004) target="_blank">
+<style>
+  .social-icons img {
+    transition: transform 0.2s ease;
+  }
+
+  .social-icons img:hover {
+    transform: scale(1.2);
+  }
+</style>
+
+<p align="center" class="social-icons">
+  <a href="mailto:iamhieu213@gmail.com" target="_blank">
     <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" />
   </a>
   &nbsp;&nbsp;&nbsp;
-  <a href="[[https://facebook.com/iamhieu213](https://www.facebook.com/hieu.nguyenvan2132004)]()" target="_blank">
+  <a href="https://www.facebook.com/hieu.nguyenvan2132004" target="_blank">
     <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook" />
   </a>
   &nbsp;&nbsp;&nbsp;
-  <a href="[https://instagram.com/iamhieu.213](https://www.instagram.com/ng.vhieu_213/)" target="_blank">
+  <a href="https://www.instagram.com/ng.vhieu_213/" target="_blank">
     <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" />
   </a>
 </p>
-
 
 
 ---
