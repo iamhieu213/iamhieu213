@@ -53,29 +53,29 @@
 
 ### 📫 Contact Me
 
-<style>
-  .social-icons img {
-    transition: transform 0.2s ease;
-  }
-
-  .social-icons img:hover {
-    transform: scale(1.2);
-  }
-</style>
-
-<p align="center" class="social-icons">
+<p align="center">
   <a href="mailto:iamhieu213@gmail.com" target="_blank">
-    <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail" />
+    <img src="https://img.icons8.com/color/48/000000/gmail-new.png" alt="Gmail"
+         style="transition: transform 0.2s ease; display: inline-block;" 
+         onmouseover="this.style.transform='scale(1.2)'" 
+         onmouseout="this.style.transform='scale(1)'" />
   </a>
   &nbsp;&nbsp;&nbsp;
   <a href="https://www.facebook.com/hieu.nguyenvan2132004" target="_blank">
-    <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook" />
+    <img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook"
+         style="transition: transform 0.2s ease; display: inline-block;" 
+         onmouseover="this.style.transform='scale(1.2)'" 
+         onmouseout="this.style.transform='scale(1)'" />
   </a>
   &nbsp;&nbsp;&nbsp;
   <a href="https://www.instagram.com/ng.vhieu_213/" target="_blank">
-    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" />
+    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"
+         style="transition: transform 0.2s ease; display: inline-block;" 
+         onmouseover="this.style.transform='scale(1.2)'" 
+         onmouseout="this.style.transform='scale(1)'" />
   </a>
 </p>
+
 
 
 ---
