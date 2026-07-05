@@ -3,20 +3,20 @@
 
 <img align="right" alt="Coding" width="300" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
 
-### 🙋‍♂️ About Me
+### About Me
 
-- 🎓 I'm currently studying at **Hanoi University of Science and Technology** – SoICT, Viet Nam  
-- 💻 I’m passionate about **Full Stack Web Development**
-- 🌱 Currently exploring **PERN Stack** and **MERN Stack**
-- 📚 I love learning new tech and solving real-world problems
-- 🗣 I'm learning **Japanese** and improving **English**
-- 🎯 My goal: Become a **Software Engneering** and future **CSO**
+-  I'm currently studying at **Hanoi University of Science and Technology** – SoICT, Viet Nam  
+-  I’m passionate about **Full Stack Web Development**
+-  Currently exploring **PERN Stack** and **MERN Stack**
+-  I love learning new tech and solving real-world problems
+-  I'm learning **Japanese** and improving **English**
+-  My goal: Become a **Software Engneering** and future **CSO**
 
 ---
 
 ### 🔧 Tech Stack
 
-#### 👨‍💻 Languages & Frameworks
+####  Languages & Frameworks
 
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
@@ -35,14 +35,14 @@
 
 
 
-#### 🗃️ Databases
+####  Databases
 
 ![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
 ![Redis](https://img.shields.io/badge/-Redis-DC382D?style=flat&logo=redis&logoColor=white)
 
-#### 🧰 Tools & Others
+####  Tools & Others
 
 ![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=white)
@@ -52,7 +52,7 @@
 ![Notion](https://img.shields.io/badge/-Notion-000000?style=flat&logo=notion&logoColor=white)
 ![Figma](https://img.shields.io/badge/-Figma-F24E1E?style=flat&logo=figma&logoColor=white)
 
-#### ☁️ DevOps & Cloud
+####  DevOps & Cloud
 
 ![Vercel](https://img.shields.io/badge/-Vercel-000000?style=flat&logo=vercel&logoColor=white)
 ![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
@@ -62,7 +62,7 @@
 ![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)
 ---
 
-### 📈 GitHub Stats
+###  GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=iamhieu213&show_icons=true&theme=radical" alt="Hieu's GitHub stats" width="400"/>
@@ -71,7 +71,7 @@
 
 ---
 
-### 📫 Contact Me
+###  Contact Me
 
 <p align="center">
   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nguyenvanhieu21.3.2004@gmail.com" target="_blank">
