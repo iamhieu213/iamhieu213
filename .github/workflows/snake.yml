@@ -2,6 +2,13 @@
 name: Generate Custom Snake
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - generate_snake.py
+      - snake.svg
+      - .github/workflows/snake.yml
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
