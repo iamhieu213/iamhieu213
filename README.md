@@ -102,7 +102,7 @@
 
 ## 🐍 Contribution Snake
 
-All days start green. The red snake visits and eats only days with zero contributions, leaving active days green.
+All days start green. The red snake turns reachable days with zero contributions gray, taking detours around active days or along the outside of the grid. Active days stay green.
 
 ![Snake Animation](https://raw.githubusercontent.com/iamhieu213/iamhieu213/output/snake.svg)
 

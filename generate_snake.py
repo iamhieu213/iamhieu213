@@ -1,5 +1,6 @@
 from pathlib import Path
 import argparse
+from collections import deque
 from datetime import date, timedelta
 from html.parser import HTMLParser
 from urllib.request import Request, urlopen
@@ -42,11 +43,12 @@ last_day = max(calendar.days)
 start_day = first_day - timedelta(days=(first_day.weekday()+1) % 7)
 
 COLS, ROWS = (last_day-start_day).days//7+1, 7
-CELL, GAP, MARGIN = 11, 3, 10
+CELL, GAP, MARGIN = 11, 3, 26
 PITCH = CELL + GAP
 WIDTH = 2*MARGIN + COLS*PITCH-GAP
 HEIGHT = 2*MARGIN + ROWS*PITCH-GAP
 GRID_COLOR, SNAKE_COLOR = '#39d353', '#ef4444'
+EATEN_COLOR = '#ebedf0'
 # Segment sizes from the head to the tail, in pixels.
 SEGMENT_SIZES = (14, 11, 9, 7, 5, 3)
 STEP = 0.15
@@ -56,16 +58,52 @@ HOLD = 1.5
 cells = [(x,y) for x in range(COLS) for y in (range(ROWS) if x%2==0 else range(ROWS-1,-1,-1))]
 # Skip padding outside the dates returned by GitHub.
 cells = [(x,y) for x,y in cells if start_day+timedelta(days=x*7+y) in calendar.days]
-# Jump directly between empty days; never visit active cells.
-path = [(x,y) for x,y in cells if calendar.days[start_day+timedelta(days=x*7+y)] == 0]
-arrival_indices = {cell: index for index, cell in enumerate(path)}
+targets = {cell for cell in cells if calendar.days[start_day+timedelta(days=cell[0]*7+cell[1])] == 0}
+blocked = set(cells)-targets
+
+
+def route_to_food(position, food):
+    """Find the nearest food via adjacent cells, allowing an outside border."""
+    queue = deque([position])
+    parents = {position: None}
+    while queue:
+        current = queue.popleft()
+        if current in food:
+            route = []
+            while current != position:
+                route.append(current)
+                current = parents[current]
+            return route[::-1]
+        x, y = current
+        for neighbor in ((x+1,y), (x,y+1), (x,y-1), (x-1,y)):
+            nx, ny = neighbor
+            if (-1 <= nx <= COLS and -1 <= ny <= ROWS
+                    and neighbor not in blocked and neighbor not in parents):
+                parents[neighbor] = current
+                queue.append(neighbor)
+    return None
+
+
+# Start outside the grid and choose food by distance rather than date order.
+path = [(-1,0)] if targets else []
+remaining = set(targets)
+while remaining:
+    route = route_to_food(path[-1], remaining)
+    if route is None:
+        break  # Fully enclosed cells cannot be reached without crossing activity.
+    path.extend(route)
+    remaining.difference_update(route)
+arrival_indices = {}
+for index, cell in enumerate(path):
+    if cell in targets:
+        arrival_indices.setdefault(cell, index)
 N=len(path)
 DURATION=N*STEP+HOLD
 
 def times_and_values(index):
-    # Only empty days disappear when the snake head arrives.
-    t=(index+1)*STEP/DURATION
-    return f'0;{t:.6f};1', '1;0;0'
+    # Empty days turn gray on the first visit and stay gray on revisits.
+    t=index*STEP/DURATION
+    return f'0;{t:.6f};1', f'{GRID_COLOR};{EATEN_COLOR};{EATEN_COLOR}'
 
 parts=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-label="Red snake eats only days with zero GitHub contributions">',
        '<title>iamhieu213 contribution snake</title>',
@@ -75,9 +113,9 @@ for x,y in cells:
     day = start_day+timedelta(days=x*7+y)
     level = calendar.days[day]
     animation = ''
-    if level == 0:
+    if (x,y) in arrival_indices:
         kt,vs=times_and_values(arrival_indices[(x,y)])
-        animation = f'<animate attributeName="opacity" values="{vs}" keyTimes="{kt}" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/>'
+        animation = f'<animate attributeName="fill" values="{vs}" keyTimes="{kt}" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/>'
     parts.append(f'<rect x="{px}" y="{py}" width="{CELL}" height="{CELL}" rx="2" fill="{GRID_COLOR}" data-date="{day}" data-level="{level}"><title>{day}: {"0 contributions" if level == 0 else "contribution level " + str(level)}</title>{animation}</rect>')
 # Draw the tail first so the larger head appears on top.
 # Each segment tracks prior head position; hides when beyond the grid.
@@ -92,4 +130,6 @@ for segment in (range(len(SEGMENT_SIZES)-1,-1,-1) if path else ()):
     parts.append(f'<rect x="{MARGIN+coords[0][0]*PITCH+offset}" y="{MARGIN+coords[0][1]*PITCH+offset}" width="{size}" height="{size}" rx="{min(3, size/2)}" fill="{SNAKE_COLOR}" opacity="{opacity}"><animate attributeName="x" values="{xs}" keyTimes="{keys}" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/><animate attributeName="y" values="{ys}" keyTimes="{keys}" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/><animate attributeName="opacity" values="1;1;0" keyTimes="0;{N*STEP/DURATION:.6f};1" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/></rect>')
 parts.append('</svg>')
 Path('snake.svg').write_text('\n'.join(parts),encoding='utf-8')
-print(f'Generated snake.svg ({len(cells)} days, {N} empty days to eat, {DURATION:.1f}s loop)')
+print(f'Generated snake.svg ({len(cells)} days, {len(arrival_indices)} empty days eaten, {N} steps, {DURATION:.1f}s loop)')
+if remaining:
+    print(f'{len(remaining)} empty days are enclosed by active cells and stay green.')
