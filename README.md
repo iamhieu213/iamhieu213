@@ -100,4 +100,12 @@
 
 ---
 
+## 🐍 Contribution Snake
+
+The red snake eats days with zero contributions; active days keep their green color.
+
+![Snake Animation](https://raw.githubusercontent.com/iamhieu213/iamhieu213/output/snake.svg)
+
+---
+
 > _“Stay hungry, stay foolish.” – Steve Jobs_
