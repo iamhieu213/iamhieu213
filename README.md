@@ -102,7 +102,7 @@
 
 ## 🐍 Contribution Snake
 
-The red snake eats days with zero contributions; active days keep their green color.
+All days start green. The red snake visits and eats only days with zero contributions, leaving active days green.
 
 ![Snake Animation](https://raw.githubusercontent.com/iamhieu213/iamhieu213/output/snake.svg)
 

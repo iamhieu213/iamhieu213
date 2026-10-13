@@ -46,17 +46,19 @@ CELL, GAP, MARGIN = 11, 3, 10
 PITCH = CELL + GAP
 WIDTH = 2*MARGIN + COLS*PITCH-GAP
 HEIGHT = 2*MARGIN + ROWS*PITCH-GAP
-GRAY, SNAKE_COLOR = '#ebedf0', '#ef4444'
-LEVEL_COLORS = (GRAY, '#9be9a8', '#40c463', '#30a14e', '#216e39')
+GRID_COLOR, SNAKE_COLOR = '#39d353', '#ef4444'
 # Segment sizes from the head to the tail, in pixels.
 SEGMENT_SIZES = (14, 11, 9, 7, 5, 3)
 STEP = 0.15
 HOLD = 1.5
 
-# Serpentine Hamiltonian path visits each cell exactly once.
-path = [(x,y) for x in range(COLS) for y in (range(ROWS) if x%2==0 else range(ROWS-1,-1,-1))]
+# List calendar cells in a serpentine order.
+cells = [(x,y) for x in range(COLS) for y in (range(ROWS) if x%2==0 else range(ROWS-1,-1,-1))]
 # Skip padding outside the dates returned by GitHub.
-path = [(x,y) for x,y in path if start_day+timedelta(days=x*7+y) in calendar.days]
+cells = [(x,y) for x,y in cells if start_day+timedelta(days=x*7+y) in calendar.days]
+# Jump directly between empty days; never visit active cells.
+path = [(x,y) for x,y in cells if calendar.days[start_day+timedelta(days=x*7+y)] == 0]
+arrival_indices = {cell: index for index, cell in enumerate(path)}
 N=len(path)
 DURATION=N*STEP+HOLD
 
@@ -68,18 +70,18 @@ def times_and_values(index):
 parts=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-label="Red snake eats only days with zero GitHub contributions">',
        '<title>iamhieu213 contribution snake</title>',
        f'<rect width="{WIDTH}" height="{HEIGHT}" fill="white"/>']
-for i,(x,y) in enumerate(path):
+for x,y in cells:
     px=MARGIN+x*PITCH; py=MARGIN+y*PITCH
     day = start_day+timedelta(days=x*7+y)
     level = calendar.days[day]
     animation = ''
     if level == 0:
-        kt,vs=times_and_values(i)
+        kt,vs=times_and_values(arrival_indices[(x,y)])
         animation = f'<animate attributeName="opacity" values="{vs}" keyTimes="{kt}" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/>'
-    parts.append(f'<rect x="{px}" y="{py}" width="{CELL}" height="{CELL}" rx="2" fill="{LEVEL_COLORS[level]}" data-date="{day}" data-level="{level}"><title>{day}: {"0 contributions" if level == 0 else "contribution level " + str(level)}</title>{animation}</rect>')
+    parts.append(f'<rect x="{px}" y="{py}" width="{CELL}" height="{CELL}" rx="2" fill="{GRID_COLOR}" data-date="{day}" data-level="{level}"><title>{day}: {"0 contributions" if level == 0 else "contribution level " + str(level)}</title>{animation}</rect>')
 # Draw the tail first so the larger head appears on top.
 # Each segment tracks prior head position; hides when beyond the grid.
-for segment in range(len(SEGMENT_SIZES)-1,-1,-1):
+for segment in (range(len(SEGMENT_SIZES)-1,-1,-1) if path else ()):
     size = SEGMENT_SIZES[segment]
     offset = (CELL-size)/2
     coords=[path[max(0,i-segment)] for i in range(N)]
@@ -87,7 +89,7 @@ for segment in range(len(SEGMENT_SIZES)-1,-1,-1):
     ys=';'.join(str(MARGIN+y*PITCH+offset) for x,y in coords+[coords[-1]])
     keys=';'.join(f'{(i*STEP)/DURATION:.6f}' for i in range(N))+ ';1'
     opacity='1' if segment==0 else '0.92'
-    parts.append(f'<rect x="{MARGIN+offset}" y="{MARGIN+offset}" width="{size}" height="{size}" rx="{min(3, size/2)}" fill="{SNAKE_COLOR}" opacity="{opacity}"><animate attributeName="x" values="{xs}" keyTimes="{keys}" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/><animate attributeName="y" values="{ys}" keyTimes="{keys}" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/><animate attributeName="opacity" values="1;1;0" keyTimes="0;{N*STEP/DURATION:.6f};1" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/></rect>')
+    parts.append(f'<rect x="{MARGIN+coords[0][0]*PITCH+offset}" y="{MARGIN+coords[0][1]*PITCH+offset}" width="{size}" height="{size}" rx="{min(3, size/2)}" fill="{SNAKE_COLOR}" opacity="{opacity}"><animate attributeName="x" values="{xs}" keyTimes="{keys}" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/><animate attributeName="y" values="{ys}" keyTimes="{keys}" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/><animate attributeName="opacity" values="1;1;0" keyTimes="0;{N*STEP/DURATION:.6f};1" dur="{DURATION:.3f}s" repeatCount="indefinite" calcMode="discrete"/></rect>')
 parts.append('</svg>')
 Path('snake.svg').write_text('\n'.join(parts),encoding='utf-8')
-print(f'Generated snake.svg ({N} cells, {DURATION:.1f}s loop)')
+print(f'Generated snake.svg ({len(cells)} days, {N} empty days to eat, {DURATION:.1f}s loop)')
